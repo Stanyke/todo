@@ -10,7 +10,7 @@ class CreateUser extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        name:""
+        name: ""
     }
   }
 
@@ -48,8 +48,8 @@ class CreateUser extends React.Component{
 var Reply = document.getElementById('reply');
 fetch('https://todobud.herokuapp.com/api/users', {
                 method: 'post',
-                body:JSON.stringify(newUser)
-            }).then((res) => res.json())
+                body:JSON.stringify({newUser})
+            }).then((response) => response.json())
             .then((data) =>  console.log(data))
             .catch((err)=>console.log(err))
    }
