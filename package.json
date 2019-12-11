@@ -1,0 +1,35 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This is a web application built on NodeJS & ReactJS where users come to manage their todo list including it status",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stanyke/todo.git"
+  },
+  "keywords": [
+    "Todo",
+    "users",
+    "manage"
+  ],
+  "author": "Stanley Chibuike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stanyke/todo/issues"
+  },
+  "homepage": "https://github.com/Stanyke/todo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "node-pre-gyp": "^0.14.0",
+    "nodemon": "^2.0.1",
+    "pg": "^7.14.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  }
+}
