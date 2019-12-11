@@ -2,6 +2,25 @@ const app = require('../app');
 
 const client = require('../db/connectDB');
 
+app.get('/api/users', function (req, res)
+{  
+    client.query(`SELECT * FROM users`, (Inerr, Inresult) => 
+    {
+        if (Inerr)
+        {
+            res.status(500).send("We Encoutered An Error Getting All Users");
+        }
+
+        if (Inresult)
+        {
+            res.status(200).json({
+                "users" : Inresult.rows
+            })
+        }
+    });
+});
+
+
 app.post('/api/users', function (req, res)
 {    
     const realvalue = [req.body.name];
