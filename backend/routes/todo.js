@@ -37,6 +37,43 @@ app.post('/api/todos', (req, res) =>
     });
 });
 
+app.get('/api/todos/:id', (req, res) =>
+{
+
+    const taskId = req.params.id;
+    
+    if (!taskId)
+    {
+        res.status(400).send('Please provide a Task ID');
+    }
+
+    client.query(`SELECT * FROM user_tasks WHERE Id = '${taskId}'`, (Uerr, Uresult) => 
+    {
+        if (Uerr)
+        {
+            res.status(500).send("We Encoutered An Error Getting User's Todo");
+        }
+
+        if (!Uresult.rows[0])
+        {
+            res.status(400).send("User's Todo with such ID does not exist")
+        }
+
+        if (Uresult.rows[0])
+        {
+            res.status(200).json({
+                "ID": Uresult.rows[0].Id,
+                "Description": Uresult.rows[0].description,
+                "State": Uresult.rows[0].state,
+                "User_id": Uresult.rows[0].user_id
+            });
+
+        }
+
+    });
+});
+
+
 app.patch('/api/todos/:id', (req, res) =>
 {
     const taskId = req.params.id;
