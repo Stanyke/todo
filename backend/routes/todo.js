@@ -62,7 +62,7 @@ app.get('/api/todos/:id', (req, res) =>
         if (Uresult.rows[0])
         {
             res.status(200).json({
-                "ID": Uresult.rows[0].Id,
+                "ID": Uresult.rows[0].id,
                 "Description": Uresult.rows[0].description,
                 "State": Uresult.rows[0].state,
                 "User_id": Uresult.rows[0].user_id
