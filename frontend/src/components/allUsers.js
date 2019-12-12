@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from "react-router-dom";
+
 import axios from 'axios';
 
 class AllUsers extends Component{
@@ -8,7 +10,7 @@ class AllUsers extends Component{
         this.state = {
             fullname:[],
             erroMsg:""
-        }
+       }
       }
 
       componentDidMount()
@@ -47,7 +49,8 @@ class AllUsers extends Component{
                 <tbody class="thead-dark">
                     <tr>
                       <th>{names.id}</th>
-                      <td class="col-6">{names.name}</td>
+                      <td class="col-4">{names.name}</td>
+                      <td class="col-2"><Link class="btn btn-outline-info" to={"/view/"+names.id}>View</Link></td>
                       <td class="col-2"><Link class="btn btn-outline-info" to={"/edit/"+names.id}>Update</Link></td>
                       <td class="col-2"><button type="button" class="btn-danger">Delete</button></td>
                     </tr>
