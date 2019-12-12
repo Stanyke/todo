@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
+import { Link } from "react-router-dom";
+
 import '../App.css';
 
 class CreateTodo extends React.Component{
@@ -20,6 +22,10 @@ class CreateTodo extends React.Component{
       <div class="container-fluid">
         <div class="row">
         
+        <div class="newT">
+          <Link class="btn btn-outline-success" to="/">Homepage</Link>
+        </div>
+
         <div class="col-1"></div>
         <div class="form-group col-10">
           <div align="left" class="col-12">Todo's Description</div>

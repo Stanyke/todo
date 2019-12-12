@@ -35,7 +35,8 @@ class UserView extends React.Component{
         }
     })
     .catch(error=>{
-      alert("We Encoutered An Error Getting User")
+      alert("This User's Todo List Is Empty");
+      window.location.href = '/';
     })
 
   }

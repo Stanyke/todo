@@ -133,12 +133,12 @@ app.patch('/api/todos/:id', (req, res) =>
                             {
                                 if (UpErr)
                                 {
-                                    res.status(400).send("Error updating Task");
+                                    res.status(400).send("Error Updating Todo");
                                 }
 
                                 if (UpRes)
                                 {
-                                    res.status(201).send("Task Successfully Updated");
+                                    res.status(201).send("Todo Successfully Updated");
                                 }
                             });
                         }

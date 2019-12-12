@@ -2,6 +2,8 @@ import React from 'react';
 
 import axios from 'axios';
 
+import { Link } from "react-router-dom";
+
 const linkTo = "https://todobud.herokuapp.com"
 
 class UserEdit extends React.Component{
@@ -44,6 +46,10 @@ class UserEdit extends React.Component{
       <div class="container-fluid">
         <div class="row">
         
+        <div class="newT">
+          <Link class="btn btn-outline-success" to="/">Homepage</Link>
+        </div>
+
         <div class="col-1"></div>
         <div class="form-group col-10">
           <div align="left" class="col-12">User's ID</div>
@@ -96,6 +102,7 @@ class UserEdit extends React.Component{
         if (response.status === 201)
         {
           reply.innerHTML = "Name Successfully Updated";
+          window.location.href = '/';
         }
 
         if (response.status === 400)
