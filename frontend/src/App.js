@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import CreateUser from './components/createUsers';
+import AllUsers from './components/allUsers';
 
 function App() {
   return (
     <div className="App">
-      <CreateUser />
+      <AllUsers />
     </div>
   );
 }

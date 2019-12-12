@@ -1,5 +1,7 @@
 import React from 'react';
 
+import axios from 'axios';
+
 var panelStyle = {
 	'max-width': '80%',
 	margin: '0 auto'
@@ -41,17 +43,23 @@ class CreateUser extends React.Component{
    else
    {     
 
-    let newUser = {
+    const baseUrl = "https://todobud.herokuapp.com/api/users"
+    const newUser = {
       name: this.state.name
     }
     
-var Reply = document.getElementById('reply');
-fetch('https://todobud.herokuapp.com/api/users', {
-                method: 'post',
-                body:JSON.stringify({newUser})
-            }).then((response) => response.json())
-            .then((data) =>  console.log(data))
-            .catch((err)=>console.log(err))
+    var Reply = document.getElementById('reply');
+    axios.post(baseUrl,newUser)
+     .then(response=>{
+       if (response.data.success===true) {
+         alert(response.data.message)
+       }
+       else {
+         alert(response.data.message)
+       }
+     }).catch(error=>{
+       alert("Error 34 "+error)
+     })
    }
 
   }

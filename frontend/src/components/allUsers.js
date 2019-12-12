@@ -1,71 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import axios from 'axios';
 
-class CreateUser extends React.Component{
+class AllUsers extends Component{
     constructor(props){
         super(props);
         this.state = {
-            fullname:""
+            fullname:[],
+            erroMsg:""
         }
       }
 
+      componentDidMount()
+      {
+        axios.get('https://todobud.herokuapp.com/api/users')
+        .then(response =>
+          {
+            console.log(response)
+            this.setState({fullname: response.data.users})
+          })
+          .catch(error =>
+            {
+              console.log(error)
+              this.setState({erroMsg: 'Error Getting Users'})
+            })
+      }
+
       render(){
+
+        const { fullname, erroMsg } = this.state
         return (
           <div class="container-fluid">
             <div class="row">
 
-              <div class="form-group col-md-12">
-                <label for="inputEmail4">Full Name</label>
-                <input type="email" class="form-control"  placeholder="Full Name" value={this.state.email} onChange={(value)=> this.setState({fullname:value.target.value})}/>
+              <center>List of Users</center>
+              <br/>
+
+              <div class="col-12">
+              {
+                fullname.length ?
+                fullname.map(names => <div key={names.id}>{names.name}</div>) : null
+              }
+              {
+                erroMsg ? <div>{erroMsg}</div> : null
+              }
               </div>
-
-              <button type="submit" class="col-md-12 btn btn-primary" onClick={()=>this.sendSave()}>Save</button>
-
-            <br/>
-
-            <div id="boxx" class="col-sm-12"></div>
-
             </div>
           </div>
         );
       }
+    }
 
-
-      sendSave()
-      {
-        if (this.state.fullname==="") {
-           alert("Full Name Is Empty")
-        }
-        else {
-     
-          const baseUrl = "https://todobud.herokuapp.com/api/users"
-     
-          const datapost = {
-            fullname : this.state.fullname
-          }
-     
-          axios.post(baseUrl,datapost)
-          .then(result=>{
-
-            if (!result.data.data)
-            {
-              document.getElementById("boxx").innerHTML = result.data;
-            }
-          }).catch(error=>{
-             if (error)
-             {
-                document.getElementById("boxx").innerHTML = error;
-             }
-            
-            console.log(error);
-          })
-     
-        }
-     
-
-      }
-}
-
-
-export default CreateUser;
+export default AllUsers;
