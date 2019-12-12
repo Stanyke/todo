@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Stanyke/todo/tree/develop/frontend/static/css/main.d1b05096.chunk.css",
+    "main.js": "/Stanyke/todo/tree/develop/frontend/static/js/main.f7e7274f.chunk.js",
+    "main.js.map": "/Stanyke/todo/tree/develop/frontend/static/js/main.f7e7274f.chunk.js.map",
+    "runtime-main.js": "/Stanyke/todo/tree/develop/frontend/static/js/runtime-main.44d641e0.js",
+    "runtime-main.js.map": "/Stanyke/todo/tree/develop/frontend/static/js/runtime-main.44d641e0.js.map",
+    "static/js/2.775dfb88.chunk.js": "/Stanyke/todo/tree/develop/frontend/static/js/2.775dfb88.chunk.js",
+    "static/js/2.775dfb88.chunk.js.map": "/Stanyke/todo/tree/develop/frontend/static/js/2.775dfb88.chunk.js.map",
+    "index.html": "/Stanyke/todo/tree/develop/frontend/index.html",
+    "precache-manifest.5af6243579df20f36ef8d39e13d8773c.js": "/Stanyke/todo/tree/develop/frontend/precache-manifest.5af6243579df20f36ef8d39e13d8773c.js",
+    "service-worker.js": "/Stanyke/todo/tree/develop/frontend/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/Stanyke/todo/tree/develop/frontend/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.775dfb88.chunk.js.LICENSE": "/Stanyke/todo/tree/develop/frontend/static/js/2.775dfb88.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44d641e0.js",
+    "static/js/2.775dfb88.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.f7e7274f.chunk.js"
+  ]
+}
