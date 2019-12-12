@@ -33,18 +33,32 @@ class AllUsers extends Component{
           <div class="container-fluid">
             <div class="row">
 
-              <center>List of Users</center>
-              <br/>
+              <div class="newT">
+              <button type="button" class="btn-success">New Todo</button>
+              </div>
 
-              <div class="col-12">
+              <br/>
+              <table class="table">
+                  
+                  
               {
                 fullname.length ?
-                fullname.map(names => <div key={names.id}>{names.name}</div>) : null
-              }
-              {
-                erroMsg ? <div>{erroMsg}</div> : null
-              }
-              </div>
+                fullname.map(names => <div key={names.id}>
+                <tbody class="thead-dark">
+                    <tr>
+                      <th>{names.id}</th>
+                      <td class="col-6">{names.name}</td>
+                      <td class="col-2"><Link class="btn btn-outline-info" to={"/edit/"+names.id}>Update</Link></td>
+                      <td class="col-2"><button type="button" class="btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                  </div>) : null
+                }
+                {
+                  erroMsg ? <div col="12">{erroMsg}</div> : null
+                }
+                
+               </table>
             </div>
           </div>
         );
