@@ -51,7 +51,7 @@ class UserEdit extends React.Component{
         </div>
 
         <div class="col-1"></div>
-        <div class="form-group col-10">
+        <div class="col-10">
           <div align="left" class="col-12">User's ID</div>
           <input type="text" class="form-control" id="uid" value={this.state.uid} readOnly />
         </div><div class="col-1"></div>
