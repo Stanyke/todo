@@ -26,37 +26,39 @@ class CreateTodo extends React.Component{
           <Link class="btn btn-outline-success" to="/">Homepage</Link>
         </div>
 
-        <div class="col-1"></div>
-        <div class="form-group col-10">
-          <div align="left" class="col-12">Todo's Description</div>
-          <textarea class="form-control" id="describe" rows="3" value={this.state.description} onChange={(value)=> this.setState({description:value.target.value})}></textarea>
-        </div><div class="col-1"></div>
+        <table class="table">
+          <div class="col-1"></div>
+          <div class="form-group col-10">
+            <div align="left" class="col-12">Todo's Description</div>
+            <textarea class="form-control" id="describe" rows="3" value={this.state.description} onChange={(value)=> this.setState({description:value.target.value})}></textarea>
+          </div><div class="col-1"></div>
 
-        <div class="col-1"></div>
-        <div class="form-group col-10">
-          <div align="left" class="col-12">Todo's State</div>
-          <select class="form-control" id="tstate" onChange={(value)=> this.setState({state:value.target.value})}>
-            <option value="todo">Todo</option>
-            <option value="done">Done</option>
-          </select>
-        </div><div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="form-group col-10">
+            <div align="left" class="col-12">Todo's State</div>
+            <select class="form-control" id="tstate" onChange={(value)=> this.setState({state:value.target.value})}>
+              <option value="todo">Todo</option>
+              <option value="done">Done</option>
+            </select>
+          </div><div class="col-1"></div>
 
-        <div class="col-1"></div>
-        <div class="form-group col-10">
-          <div align="left" class="col-12">User's ID</div>
-          <input type="number" class="form-control" id="uid" value={this.state.user_id} onChange={(value)=> this.setState({user_id:value.target.value})} />
-        </div><div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="form-group col-10">
+            <div align="left" class="col-12">User's ID</div>
+            <input type="number" class="form-control" id="uid" value={this.state.user_id} onChange={(value)=> this.setState({user_id:value.target.value})} />
+          </div><div class="col-1"></div>
 
-        <div class="col-3"></div>
-        <div class="col-6">
-          <button type="submit" class="btn btn-primary col-12" onClick={()=>this.saveIn()}>Submit</button>
-        </div>
-        <div class="col-3"></div>
+          <div class="col-3"></div>
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary col-12" onClick={()=>this.saveIn()}>Submit</button>
+          </div>
+          <div class="col-3"></div>
 
-        <div class="col-12">
-          <div id="reply"></div>
-        </div>
-        </div>
+          <div class="col-12">
+            <div id="reply"></div>
+          </div>
+        </table>
+      </div>
     </div>
 
     );
