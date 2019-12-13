@@ -168,7 +168,7 @@ app.get('/api/users/:id', (req, res) =>
     });
 });
 
-app.get('/api/users/:id', (req, res) =>
+app.get('/api/user/:id', (req, res) =>
 {
     const userId = req.params.id;
 
