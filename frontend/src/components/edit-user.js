@@ -51,28 +51,30 @@ class UserEdit extends React.Component{
           <Link class="btn btn-outline-success" to="/">Homepage</Link>
         </div>
 
-        <div class="col-1"></div>
-        <div class="form-group col-10">
-          <div align="left" class="col-12">User's ID</div>
-          <input type="text" class="form-control" id="uid" value={this.state.uid} readOnly />
-        </div><div class="col-1"></div>
+        <table class="table">
+          <div class="col-1"></div>
+          <div class="form-group col-10">
+            <div align="left" class="col-12">User's ID</div>
+            <input type="text" class="form-control" id="uid" value={this.state.uid} readOnly />
+          </div><div class="col-1"></div>
 
 
-        <div class="col-1"></div>
-        <div class="form-group col-10">
-          <div align="left" class="col-12">User's Name</div>
-          <input type="text" class="form-control" id="uid" value={this.state.name} onChange={(value)=> this.setState({name:value.target.value})} />
-        </div><div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="form-group col-10">
+            <div align="left" class="col-12">User's Name</div>
+            <input type="text" class="form-control" id="uid" value={this.state.name} onChange={(value)=> this.setState({name:value.target.value})} />
+          </div><div class="col-1"></div>
 
-        <div class="col-3"></div>
-        <div class="col-6">
-          <button type="submit" class="btn btn-primary col-12" onClick={()=>this.updateMe()}>Update</button>
-        </div>
-        <div class="col-3"></div>
+          <div class="col-3"></div>
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary col-12" onClick={()=>this.updateMe()}>Update</button>
+          </div>
+          <div class="col-3"></div>
 
-        <div class="col-12">
-          <div id="reply"></div>
-        </div>
+          <div class="col-12">
+            <div id="reply"></div>
+          </div>
+        </table>
 
         </div>
     </div>
