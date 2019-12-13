@@ -167,6 +167,33 @@ app.get('/api/users/:id', (req, res) =>
         }
     });
 });
+
+app.get('/api/user/:id', (req, res) =>
+{
+    const userId = req.params.id;
+
+    client.query(`SELECT * FROM users WHERE Id = '${userId}'`, (err, result) => 
+    {
+        if (err)
+        {
+            res.status(500).send("We Encoutered An Error Getting User");
+        }
+
+        if (result.rows[0])
+        {
+            res.status(200).json({
+                "ID": result.rows[0].Id,
+                "Name": result.rows[0].name
+            });
+        }
+
+        if (!result.rows[0])
+        {
+            res.status(400).send("User with such ID does not exist")
+        }
+    });
+});
+
 const userRoute = app;
 
 module.exports = userRoute;
