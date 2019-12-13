@@ -96,6 +96,7 @@ class CreateTodo extends React.Component{
           if (response.status === 201)
           {
             reply.innerHTML = "Task successfully Created";
+            window.location.href = '/';
           }
         console.log(response);
       })
