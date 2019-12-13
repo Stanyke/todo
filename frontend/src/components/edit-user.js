@@ -20,7 +20,7 @@ class UserEdit extends React.Component{
   {
     let userId = this.props.match.params.id;
 
-    const url = linkTo+"/api/users/"+userId
+    const url = linkTo+"/api/user/"+userId
     axios.get(url)
     .then(res =>
       {
@@ -51,7 +51,7 @@ class UserEdit extends React.Component{
         </div>
 
         <div class="col-1"></div>
-        <div class="col-10">
+        <div class="form-group col-10">
           <div align="left" class="col-12">User's ID</div>
           <input type="text" class="form-control" id="uid" value={this.state.uid} readOnly />
         </div><div class="col-1"></div>
