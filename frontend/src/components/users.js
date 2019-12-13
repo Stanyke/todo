@@ -85,7 +85,7 @@ class AllUsers extends Component{
           axios.delete(linkTo)
           .then(response => 
           {
-            if (response.status === 201)
+            if (response.status === 200)
             {
               reply.innerHTML = "User Deleted Successfully";
               window.location.href = '/';
