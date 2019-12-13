@@ -182,7 +182,7 @@ app.get('/api/user/:id', (req, res) =>
         if (result.rows[0])
         {
             res.status(200).json({
-                "ID": result.rows[0].Id,
+                "ID": result.rows[0].id,
                 "Name": result.rows[0].name
             });
         }
